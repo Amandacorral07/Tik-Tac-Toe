@@ -13,6 +13,9 @@ color: white;
 padding-right: 10px;
 
 }
+h2{
+    text-align: center;
+}
 #minion{
     width: 60px;
     height: 70px;

@@ -53,165 +53,76 @@
 
 // assigning colors to players and set color before they click the div
 const nonColor = `rgb(252, 235, 3)`
-const playerOneColor = `rgb(3, 252, 115)`
-const playerTwoColor = `rgb(177, 3, 252)`
+const playerOneChoice = "X"
+const playerTwoChoice = "O"
+
+let playerTurn ="X"
+let notClicked = [true , true , true , true , true , true , true , true , true]
+let alreadyClicked = "This box is taken"
 
 
-const playerOne = true
-const playerTwo = false
-
-let playerTurn = [playerOne, playerTwo]; 
-
-if(playerOne){
-    // let target =document.querySelector('box') try to find how to change div box not a certain one
-    // target.style.backgroundColor = playerOneColor
-} else {
-    
+function boxClick (blockNumber) {
+    let currentBox = document.getElementById(`box${blockNumber}`)
+    // currentBox.addEventListener('click', function (event){
+    if(notClicked[blockNumber-1] === true){
+        if (playerTurn === "X" ){
+          notClicked[blockNumber-1]= false; 
+        currentBox.innerText = ('X')
+        playerTurn = "O"
+        return;
+    } else if (playerTurn === "O"){
+        notClicked[blockNumber-1]= true;
+        currentBox.innerText = ('O')
+        playerTurn = "X" 
+        return;
+    }
 }
-// const playerMove = () => {
-// for (let i= 0; i <9; i++){
-//     if (playerOne[i]){
+}
+// function to check for win
+ function checkWin (){
+    if (box1.innerText != "" && box1.innerText === box2.innerText && box1.innerText === box3.innerText || 
+        box4.innerText != "" && box4.innerText === box5.innerText && box4.innerText === box6.innerText ||
+        box7.innerText != "" && box7.innerText === box8.innerText && box7.innerText === box9.innerText ||
+        box1.innerText != "" && box1.innerText === box4.innerText && box1.innerText === box7.innerText || 
+        box2.innerText != "" && box2.innerText === box5.innerText && box2.innerText === box8.innerText || 
+        box3.innerText != "" && box3.innerText === box6.innerText && box3.innerText === box9.innerText ||
+        box1.innerText != "" && box1.innerText === box5.innerText && box1.innerText === box9.innerText || 
+        box3.innerText != "" && box3.innerText === box5.innerText && box3.innerText === box7.innerText      
+    ){
+        document.getElementById('winner').innerText= "We have a winner!"
+        console.log("We have a winner!")
+        
+        // endGame()
+    }
+ }
 
-//     }
-// }
-
-// }
-
-
-
-// for (let i=0; i< 9; i++){
-//  if (playerOne === playerOne){
-//      console.log("true")
-//  } else if (playerOne !== playerOne) {
-//      console.log("false")
-//  }
-// // Selecting all box divs one by ones
-// let box1 = document.getElementById('box1')
-// box1.addEventListener('click', function(event){
-//    choosePlayer()
-// })
-// let box2 = document.getElementById('box2')
-// box2.addEventListener('click', function(event){
-//     box2.style.backgroundColor = playerOneColor
-
-
-// function choosePlayer (event) {
-//     if(playerOneTurn === playerOneTurn){
-//         target.style.backgroundColor = playerOneColor
-//     } else {
-//         target.style.backgroundColor = playerTwoColor
-//     }
-//     choosePlayer()
-//     console.log(choosePlayer())
-//     // for(let playerOne=0, playerTwo=0; playerOne< 9, playerTwo <9; playerOne++, playerTwo){
-//     //     box1.style.backgroundColor = playerOneColor
-//     //     box1.backgroundColor = playerTwoColor
-//     //     console.log(array[playerOne][playerTwo])
-//     //     }
-//     }
-
-
-
-
-
-
-
+// calling each box 
+let box1 = document.getElementById('box1')
+let box2 = document.getElementById('box2')
 let box3 = document.getElementById('box3')
-box3.addEventListener('click', function(event){
-    box3.style.backgroundColor = playerOneColor
-})
 let box4 = document.getElementById('box4')
-box4.addEventListener('click', function(event){
-    box4.style.backgroundColor = playerTwoColor
-})
-let box5 = document.getElementById('box5')
-box5.addEventListener('click', function(event){
-    box5.style.backgroundColor = playerOneColor
-})
-// let box6 = document.getElementById('box6')
-// box6.addEventListener('click', function(event){
-//     if (playerOneTurn){
-//         box6.style.backgroundColor = playerOneColor
-//     }
-//     box6.style.backgroundColor = playerOneColor
-// })
+let box6 = document.getElementById('box6')
+let box7 = document.getElementById('box7')
+let box8 = document.getElementById('box8')
+let box9 = document.getElementById('box9')
 
-// let box7 = document.getElementById('box7')
-// box7.addEventListener('click', function(event){
-//     box7.style.backgroundColor = playerOneColor
-// })
-// let box8 = document.getElementById('box8')
-// box8.addEventListener('click', function(event){
-//     box8.style.backgroundColor = playerOneColor
-// })
-// let box9 = document.getElementById('box9')
-// box9.addEventListener('click', function(event){
-//     box9.style.backgroundColor = playerOneColor
-// }) 
-// }
-// for (let i=0; i< 9; i++){
+// reset button
+// let restartButton = document.getElementById('restartButton')
+function restartButton (blockNumber){
+    for (let i =1; i<=9; i++){
+        let currentBox= (`box${blockNumber}`)
+        notClicked[currentBox-1];
+        document.querySelector('box').remove('box'.innerText)
+        console.log("reset")
+    }
+}
 
-// }
+// endgame function 
 
-// function markBox(){
-//             box1.innerHTML += (target.stylebackground = nonColor);
-//         //    if (box1 === box1){
-
-//         //    }
-
-// //         }
-// // const markBox = () =>{
-// //     if (target.stylebackground = nonColor){
-// //         console.log(markBox())
-// //     }
-// // }
-
-
-
-
-
-
-
-
-// // const addColor = (event) => {
-// //     const color = event.target.style.backgroundColor 
-// //     const newColor = document.createElement('div')
-// //     newColor.style.backgroundColor = color
-// //     document.querySelector('box1').appendChild(newColor)
-// // }
-//  //try to make for loop to see if player has won
-
-// // const divBox1 = document.querySelector('box1')
-// //     while (divBox1.firstChild) {
-// //         divBox1.removeChild(divBox1.firstChild)
-// //     }
-
-// //     for (let i = 0; i < 9; i++){
-// //         const box = document.querySelector('box1')
-// //         const playerOneColor = `rgb(3, 252, 115)`
-
-// //         box.style.backgroundColor = playerOneColor
-// //     }
-
-
-
-// // // const markBox(event){
-// // //     if 
-// // //     document.getElementById('box2').value = "X";
-
-// // // }
-// //     // box2 = document.getElementById('box2').value
-//     // box3 = document.getElementById('box3').value
-//     // box4 = document.getElementById('box4').value
-    // box5 = document.getElementById('box5').value
-    // box6 = document.getElementById('box6').value
-    // box7 = document.getElementById('box7').value
-    // box8 = document.getElementById('box8').value
-    // box9 = document.getElementById('box9').value
-//     document.addEventListener('DOMContentLoaded', () => {
-//         markBox()
-//     })
-
-// restartButton.addEventListener('click', )
-
-// // function markBox 
+function endGame(tie){
+    if (tie) {
+        document.getElementById('player-turn').innerText= "It's a draw!"
+    } else {
+        document.getElementById('player-turn').innerText= `Player with ${ "O's":"X's"} wins!`
+    }
+}

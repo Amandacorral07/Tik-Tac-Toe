@@ -10,19 +10,19 @@
 <body>
     <div id="container">
         <span class="title"><h1> Minion Tic-Tac-Toe </h1><img src="minion.jpg" id="minion"></span>
-        <!-- <h2> Will put who wins in here</h2>  -->
+        <h2 id="winner"></h2> 
         <div class="boxes">
             <div class="board" id="board">
-            <div class=box id="box1" ></div>
-            <div class=box id="box2" ></div>
-            <div class=box id="box3" ></div>
-            <div class=box id="box4" ></div>
-            <div class=box id="box5" ></div>
-            <div class=box id="box6" ></div>
-            <div class=box id="box7" ></div>
-            <div class=box id="box8" ></div>               
-            <div class=box id="box9" ></div>
-            <div id="reset-button">
+            <div class=box id="box1" onClick="boxClick(1); checkWin() " ></div> 
+            <div class=box id="box2" onClick="boxClick(2); checkWin()" ></div>
+            <div class=box id="box3" onClick="boxClick(3); checkWin()" ></div>
+            <div class=box id="box4" onClick="boxClick(4); checkWin()  " ></div>
+            <div class=box id="box5" onClick="boxClick(5); checkWin()  " ></div>
+            <div class=box id="box6" onClick="boxClick(6); checkWin()  " ></div>
+            <div class=box id="box7" onClick="boxClick(7); checkWin()  " ></div>
+            <div class=box id="box8" onClick="boxClick(8); checkWin()  " ></div>               
+            <div class=box id="box9" onClick="boxClick(9); checkWin()  " ></div>
+            <div id="reset-button" value = "" onClick="restartButton(1)")>
             <br />
             <button id="restartButton">
                 Reset
@@ -35,5 +35,5 @@
 </div>
   
 </body>
-<script src="./index.js" defer></script>
+<script src="./index.js"></script>
 </html>
