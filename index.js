@@ -56,11 +56,28 @@ const nonColor = `rgb(252, 235, 3)`
 const playerOneColor = `rgb(3, 252, 115)`
 const playerTwoColor = `rgb(177, 3, 252)`
 
-let playerTurn = [playerOneColor, playerTwoColor]; 
+
+const playerOne = true
+const playerTwo = false
+
+let playerTurn = [playerOne, playerTwo]; 
+
+if(playerOne){
+    // let target =document.querySelector('box') try to find how to change div box not a certain one
+    // target.style.backgroundColor = playerOneColor
+} else {
+    
+}
+// const playerMove = () => {
+// for (let i= 0; i <9; i++){
+//     if (playerOne[i]){
+
+//     }
+// }
+
+// }
 
 
-// let playerOne = true
-// let playerTwo = false
 
 // for (let i=0; i< 9; i++){
 //  if (playerOne === playerOne){
