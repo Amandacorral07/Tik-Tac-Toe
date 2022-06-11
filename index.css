@@ -1,0 +1,56 @@
+
+body{
+    color: white;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(3, 3, 181);
+}
+
+h1{
+font-size: 30px;
+color: white;
+padding-right: 10px;
+
+}
+#minion{
+    width: 60px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+.title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#board{
+
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+ 
+}
+
+
+.box{
+    background: rgb(255, 221, 0);
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#restart-button{
+    color: black;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    
+}
+
+   
