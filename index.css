@@ -16,6 +16,9 @@ padding-right: 10px;
 h2{
     text-align: center;
 }
+h3{
+    padding-top: 20px;
+}
 #minion{
     width: 60px;
     height: 70px;
