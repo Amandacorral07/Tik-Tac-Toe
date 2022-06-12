@@ -13,23 +13,22 @@
         <h2 id="winner"></h2> 
         <div class="boxes">
             <div class="board" id="board">
-            <div class=box id="box1" onClick="boxClick(1); checkWin() " ></div> 
-            <div class=box id="box2" onClick="boxClick(2); checkWin()" ></div>
-            <div class=box id="box3" onClick="boxClick(3); checkWin()" ></div>
-            <div class=box id="box4" onClick="boxClick(4); checkWin()  " ></div>
-            <div class=box id="box5" onClick="boxClick(5); checkWin()  " ></div>
-            <div class=box id="box6" onClick="boxClick(6); checkWin()  " ></div>
-            <div class=box id="box7" onClick="boxClick(7); checkWin()  " ></div>
+            <div class=box id="box1" onClick="boxClick(1); checkWin() "></div> 
+            <div class=box id="box2" onClick="boxClick(2); checkWin() "></div>
+            <div class=box id="box3" onClick="boxClick(3); checkWin() "></div>
+            <div class=box id="box4" onClick="boxClick(4); checkWin() "></div>
+            <div class=box id="box5" onClick="boxClick(5); checkWin() "></div>
+            <div class=box id="box6" onClick="boxClick(6); checkWin() "></div>
+            <div class=box id="box7" onClick="boxClick(7); checkWin() "></div>
             <div class=box id="box8" onClick="boxClick(8); checkWin()  " ></div>               
             <div class=box id="box9" onClick="boxClick(9); checkWin()  " ></div>
-            <div id="reset-button" value = "" onClick="restartButton(1)")>
+            <div id="playerMove">
+                <h3 id="playerMove"></h3>
+            </div>
             <br />
-            <button id="resetButton">
-                Reset
+            <button id="resetButton" onclick="resetButton()">
+                Play Again
             </button>
-        </div>
-        <div id="playerMove">
-            <h3 id="playerMove"></h3>
         </div>
     </div>
 </div>

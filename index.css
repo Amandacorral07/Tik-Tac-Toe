@@ -16,8 +16,11 @@ padding-right: 10px;
 h2{
     text-align: center;
 }
-h3{
+#playerMove{
+    text-align: center;
     padding-top: 20px;
+    font-size: 25px;
+    color:rgb(255, 221, 0);
 }
 #minion{
     width: 60px;
@@ -51,12 +54,10 @@ h3{
     color: black;
 }
 
-#restart-button{
+button{
     color: black;
-    background-color: white;
-    padding: 8px;
     border-radius: 8px;
-    
+   margin: 30px;
 }
 
    

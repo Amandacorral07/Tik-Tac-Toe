@@ -25,45 +25,37 @@
 // make conditional for if player wins
 // eight win conditions
 
-// const selectDiv= document.getElementsByClassName('box');
-
-// document.addEventListener('click', () =>{
-//     document.getElementById('box1').addEventListener('click', clickResponse)
-//     // document.getElementById('box1').innerHTML +="X" || "O";
-//     console.log("It's clicking")
-// });
-
-// function clickResponse (){
-//     let div= document.getElementById('box1');
-    
-//     div.removeEventListener('click', clickResponse)
-   
-// }
-// clickResponse()
-
-    // function markBox(){
-    //     document.addEventListener('click', checkBox)
-    //     // response.preventDefault();
-    //         document.getElementById('box1').innerHTML +="X";
-    //        if (document.getElementById('box1'))
-    //     }
-    // how to I make it let them know whos player turn is it
-    // check if someone won 
-    // 
-
 // assigning colors to players and set color before they click the div
-const nonColor = `rgb(252, 235, 3)`
-const playerOneChoice = "X"
-const playerTwoChoice = "O"
+// const playerOneChoice = "X"
+// const playerTwoChoice = "O"
 
 let playerTurn ="X"
 let notClicked = [true , true , true , true , true , true , true , true , true]
-let alreadyClicked = "This box is taken"
+// let alreadyClicked = "This box is taken"
 
-let turnNum= 1
+let turnNum= 0
+
+// calling each box 
+let box1 = document.getElementById('box1')
+let box2 = document.getElementById('box2')
+let box3 = document.getElementById('box3')
+let box4 = document.getElementById('box4')
+let box6 = document.getElementById('box6')
+let box7 = document.getElementById('box7')
+let box8 = document.getElementById('box8')
+let box9 = document.getElementById('box9')
+
+let container = document.getElementById('container')
+
+// calling Player's move spot
+let playerMove= document.getElementById('playerMove')
+
+let winner= document.getElementById('winner')
+
 
 function boxClick (blockNumber) {
     let currentBox = document.getElementById(`box${blockNumber}`)
+    currentBox.document.addEventListener('click', stopClicker)
     if(notClicked[blockNumber-1] === true){
         if (playerTurn === "X" ){
           notClicked[blockNumber-1]= false; 
@@ -83,6 +75,11 @@ function boxClick (blockNumber) {
 }     
 }
 
+function stopClicker (){
+    currentBox.target.removeEventListener('click', stopClicker)
+
+    }
+
 
 // function to check for win
 function checkWin (){
@@ -96,53 +93,37 @@ function checkWin (){
         box3.innerText != "" && box3.innerText === box5.innerText && box3.innerText === box7.innerText      
     ){
         document.getElementById('winner').innerText= playerTracker()
+        
+        console.log("We have a winner!")
     }
-    if (turnNum === 9){
-        document.getElementById('winner').innerText= `It's a tie!` 
+    else if (turnNum === 9){
+        document.getElementById('winner').innerText= "It's a tie!"
     }
-    console.log("We have a winner!")
 }
 
-// calling each box 
-let box1 = document.getElementById('box1')
-let box2 = document.getElementById('box2')
-let box3 = document.getElementById('box3')
-let box4 = document.getElementById('box4')
-let box6 = document.getElementById('box6')
-let box7 = document.getElementById('box7')
-let box8 = document.getElementById('box8')
-let box9 = document.getElementById('box9')
 
-// calling Player's move spot
-let playerMove= document.getElementById('playerMove')
-
-let winner= document.getElementById('winner')
+// const stopClicker = document.querySelectorAll('box')
+//         box1.addEventListener('click', (event)=>{
+//             event.preventDefault
+//         }) 
 
 // reset button
-// let restartButton = document.getElementById('restartButton')
-function restartButton (){
-    box1.innerText =""
-    box2.innerText =""
-    box3.innerText =""
-    box4.innerText =""
-    box5.innerText =""
-    box6.innerText =""
-    box7.innerText =""
-    box8.innerText =""
-    box9.innerText =""
-    playerMove.innerText=""
-    winner.innerText =""
-}
+resetButton.addEventListener('click', function(event){
+    location.reload()
+})
+
 
 // // Player turn tracker function 
 function playerTracker(){
-    if (playerTurn === "X" && turnNum ===[5,7,9]){
+    if (playerTurn === "X" && turnNum ===[3,5,7,9]){
         playerMove.innerText=""
-        return "Player 2 has won!"
+        console.log("player one has won")
+        return "Player 1 has won!"
         
     } else {
         playerMove.innerText=""
-        return "Player 1 has won!"
+        console.log("player two has won")
+        return "Player 2 has won!"
         
     }
 }
