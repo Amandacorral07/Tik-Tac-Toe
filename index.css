@@ -5,6 +5,7 @@ body{
     display: flex;
     justify-content: center;
     background-color: rgb(3, 3, 181);
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 h1{
@@ -39,8 +40,8 @@ h2{
 #board{
 
     display: grid;
-    grid-template-columns: 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 160px 160px 160px;
+    grid-template-rows: 160px 160px 160px;
  
 }
 
@@ -55,9 +56,12 @@ h2{
 }
 
 button{
-    color: black;
+    color: rgb(3, 3, 181);
     border-radius: 8px;
    margin: 30px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   background-color: white;
+   border-color: rgb(255, 221, 0);
 }
 
    

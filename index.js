@@ -1,61 +1,32 @@
-// For clicking
-//on square click change to image 
-// change turns between players 
-// whos turn it is update in text display
-// track all even turns are player 1 all odd turns are player 2
-// once click box disable contunous clicking 
-
-// make a single div clickable
-// make each box clickable
-// make sure selecting only box not all boxes(if statment with event target refer to add color picker exercise)
-// make x or o show
-
-// once it shows x or o div should become unclickable 
-// x and o is a while loop
-
-// after each turn evaluate if someone has won
-// create a win condition
-//check if someone has won
-// 
-// give box a class when it is clicked 
-// how to set up how the computer can tell what player clicked what
-// can you add a class when box is clicked?
-
-//if div one div two div three then player wins
-// make conditional for if player wins
-// eight win conditions
-
-// assigning colors to players and set color before they click the div
-// const playerOneChoice = "X"
-// const playerTwoChoice = "O"
-
 let playerTurn ="X"
-let notClicked = [true , true , true , true , true , true , true , true , true]
+const notClicked = [true , true , true , true , true , true , true , true , true]
 // let alreadyClicked = "This box is taken"
 
+// making player turn start at 0 to use when counting number of moves
 let turnNum= 0
 
 // calling each box 
-let box1 = document.getElementById('box1')
-let box2 = document.getElementById('box2')
-let box3 = document.getElementById('box3')
-let box4 = document.getElementById('box4')
-let box6 = document.getElementById('box6')
-let box7 = document.getElementById('box7')
-let box8 = document.getElementById('box8')
-let box9 = document.getElementById('box9')
+const box1 = document.getElementById('box1')
+const box2 = document.getElementById('box2')
+const box3 = document.getElementById('box3')
+const box4 = document.getElementById('box4')
+const box6 = document.getElementById('box6')
+const box7 = document.getElementById('box7')
+const box8 = document.getElementById('box8')
+const box9 = document.getElementById('box9')
 
-let container = document.getElementById('container')
+//calling container spot
+const container = document.getElementById('container')
 
 // calling Player's move spot
-let playerMove= document.getElementById('playerMove')
+const playerMove= document.getElementById('playerMove')
 
-let winner= document.getElementById('winner')
+//calling winner spot
+const winner= document.getElementById('winner')
 
-
+// function to allow a player to click a box and appear X or O
 function boxClick (blockNumber) {
     let currentBox = document.getElementById(`box${blockNumber}`)
-    currentBox.document.addEventListener('click', stopClicker)
     if(notClicked[blockNumber-1] === true){
         if (playerTurn === "X" ){
           notClicked[blockNumber-1]= false; 
@@ -75,11 +46,6 @@ function boxClick (blockNumber) {
 }     
 }
 
-function stopClicker (){
-    currentBox.target.removeEventListener('click', stopClicker)
-
-    }
-
 
 // function to check for win
 function checkWin (){
@@ -93,27 +59,28 @@ function checkWin (){
         box3.innerText != "" && box3.innerText === box5.innerText && box3.innerText === box7.innerText      
     ){
         document.getElementById('winner').innerText= playerTracker()
-        
         console.log("We have a winner!")
+        stopClicker()
     }
     else if (turnNum === 9){
         document.getElementById('winner').innerText= "It's a tie!"
     }
 }
 
+// stop buttons from clicking once there is a winner
+function stopClicker (){
+    for (let i=0; i < notClicked.length; i++){
+        notClicked[i] = false
+    }
+}
 
-// const stopClicker = document.querySelectorAll('box')
-//         box1.addEventListener('click', (event)=>{
-//             event.preventDefault
-//         }) 
-
-// reset button
+// Reset button
 resetButton.addEventListener('click', function(event){
     location.reload()
 })
 
 
-// // Player turn tracker function 
+// Player turn tracker function 
 function playerTracker(){
     if (playerTurn === "X" && turnNum ===[3,5,7,9]){
         playerMove.innerText=""
