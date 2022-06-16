@@ -90,7 +90,7 @@ function playerTracker(){
     } else {
         playerMove.innerText=""
         console.log("player two has won")
-        return "Player 2 has won!"
+        return "Player 2 has won!!"
         
     }
 }
