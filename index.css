@@ -12,8 +12,12 @@ h1{
 font-size: 30px;
 color: white;
 padding-right: 10px;
-
 }
+
+h1:hover{
+    color: rgb(255, 221, 0);
+}
+
 h2{
     text-align: center;
 }
@@ -29,8 +33,16 @@ h2{
     display: flex;
     justify-content: center;
     border-radius: 5px;
-    
 }
+
+#minion:hover{
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
 .title{
     display: flex;
     justify-content: center;
